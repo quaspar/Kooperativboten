@@ -1,1 +1,5 @@
 name: Kopbot
+config:
+- name: KOOP_USER_API_KEY
+  friendly_name: Apinyckel till koopappen
+  type: secret
