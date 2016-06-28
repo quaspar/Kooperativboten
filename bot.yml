@@ -1,5 +1,12 @@
 name: Kopbot
 config:
-- name: KOOP_USER_API_KEY
-  friendly_name: Apinyckel till koopappen
-  type: secret
+  - name: OPTION
+    friendly_name: Some Unnecessary Option
+    info: This is an unnecessary option
+    default: the default value
+  - name: SECRET
+    friendly_name: Shhhh
+    info: This is an secret option
+    type: secret
+    default: not secret though
+    global: true
