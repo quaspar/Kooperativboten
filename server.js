@@ -1,9 +1,9 @@
-// blah blah
 var Botkit = require('botkit')
 
 var accessToken = process.env.FACEBOOK_PAGE_ACCESS_TOKEN
 var verifyToken = process.env.FACEBOOK_VERIFY_TOKEN
 var port = process.env.PORT
+var koopkey = process.env.KOOP_USER_API_KEY
 
 if (!accessToken) throw new Error('FACEBOOK_PAGE_ACCESS_TOKEN is required but missing')
 if (!verifyToken) throw new Error('FACEBOOK_VERIFY_TOKEN is required but missing')
@@ -21,6 +21,11 @@ controller.setupWebserver(port, function (err, webserver) {
   controller.createWebhookEndpoints(webserver, bot, function () {
     console.log('Ready Player 1')
   })
+})
+
+controller.hears(['nyckel'], 'message_received', function (bot, message) {
+  bot.reply(message, 'Hello! Here's your key:')
+  bot.reply(message, koopkey)
 })
 
 controller.hears(['hello', 'hi', 'hej'], 'message_received', function (bot, message) {
