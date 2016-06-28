@@ -24,7 +24,7 @@ controller.setupWebserver(port, function (err, webserver) {
 })
 
 controller.hears(['nyckel'], 'message_received', function (bot, message) {
-  bot.reply(message, 'Hello! Here's your key:')
+  bot.reply(message, 'Hello! Here\'s your key:')
   bot.reply(message, koopkey)
 })
 
